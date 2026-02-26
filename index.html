@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GODSON BRIGHT LINK COMPANY | Quality Building Materials</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(135deg, #1c1c1c, #3a2f00);
+    color: gold;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #eee;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    color: #3a2f00;
+    margin-bottom: 25px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.full {
+    grid-column: 1 / 3;
+}
+
+button {
+    background: #3a2f00;
+    color: gold;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: gold;
+    color: #1c1c1c;
+}
+
+footer {
+    background: #1c1c1c;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    .full {
+        grid-column: 1 / 2;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>GODSON BRIGHT LINK COMPANY</h1>
+    <p>Your trusted supplier of high-quality plumbing and building materials. Strength, durability, and excellence you can rely on.</p>
+</header>
+
+<div class="container">
+    <h2>Customer Purchase Form</h2>
+
+    <form>
+        <div>
+            <label>Customer Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+        </div>
+
+        <div>
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" required>
+        </div>
+
+        <div>
+            <label>Preferred Delivery Time</label>
+            <input type="time">
+        </div>
+
+        <div>
+            <label>Doors Selection</label>
+            <select>
+                <option>Select door type</option>
+                <option>Wooden Door</option>
+                <option>Security Door</option>
+                <option>Glass Door</option>
+                <option>Steel Door</option>
+            </select>
+        </div>
+
+        <div class="full">
+            <label>Select Plumbing & Building Materials</label>
+            <select multiple size="8">
+                <option>Plastic Tap</option>
+                <option>Plumbing Materials</option>
+                <option>W.C Set</option>
+                <option>Mixers</option>
+                <option>Sink</option>
+                <option>Bath</option>
+                <option>Iron Rods</option>
+                <option>Showers</option>
+                <option>Jacuzzi</option>
+                <option>Nails & Keys</option>
+                <option>PVC Ceiling</option>
+                <option>GP Tanks</option>
+                <option>Doors</option>
+            </select>
+        </div>
+
+        <div class="full">
+            <label>Specifications / Special Instructions</label>
+            <textarea placeholder="Enter sizes, colors, quantities, or any special request..."></textarea>
+        </div>
+
+        <div class="full">
+            <button type="submit">Submit Purchase Request</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    © 2026 GODSON BRIGHT LINK COMPANY • High Quality Building & Plumbing Materials
+</footer>
+
+</body>
+</html>
