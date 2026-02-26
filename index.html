@@ -12,8 +12,6 @@ body{
     background:#0e0e0e;
     color:#fff;
 }
-
-/* HEADER */
 header{
     background:linear-gradient(135deg,#000,#3a2f00);
     padding:50px 20px;
@@ -21,8 +19,6 @@ header{
 }
 header h1{color:gold;font-size:36px;margin:0;}
 header p{color:#ddd;font-size:17px;max-width:900px;margin:15px auto;}
-
-/* CONTAINER */
 .container{max-width:1200px;margin:40px auto;padding:20px;}
 h2{color:gold;text-align:center;margin-bottom:25px;}
 
@@ -50,7 +46,7 @@ h2{color:gold;text-align:center;margin-bottom:25px;}
     border:2px solid #333;
 }
 
-/* UNIQUE PRODUCT SELECTION */
+/* PRODUCTS */
 .products{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -60,21 +56,17 @@ h2{color:gold;text-align:center;margin-bottom:25px;}
     background:#151515;
     border:1.5px solid #333;
     border-radius:10px;
-    padding:14px 12px;
+    padding:14px;
     cursor:pointer;
-    transition:.25s;
     position:relative;
-    min-height:75px;
+    min-height:70px;
 }
 .product:hover{border-color:gold;}
 .product.selected{
     background:#2a2200;
     border-color:gold;
 }
-.product-title{
-    font-weight:600;
-    font-size:15px;
-}
+.product-title{font-size:15px;font-weight:600;}
 .check{
     position:absolute;
     top:8px;
@@ -88,7 +80,26 @@ h2{color:gold;text-align:center;margin-bottom:25px;}
 }
 .product.selected .check{display:block;}
 
-/* SELECTED DISPLAY */
+/* SPECIFICATIONS */
+.spec-box{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.spec-box label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+.spec-box textarea{
+    width:100%;
+    min-height:100px;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    font-size:14px;
+}
+
+/* SELECTED */
 .selected-box{
     margin:30px 0;
     padding:18px;
@@ -96,8 +107,8 @@ h2{color:gold;text-align:center;margin-bottom:25px;}
     border-left:5px solid gold;
     border-radius:8px;
 }
-.selected-box h3{color:gold;margin-top:0;font-size:18px;}
-#selectedList{color:#ddd;font-size:14px;}
+.selected-box h3{color:gold;margin-top:0;}
+#selectedList{font-size:14px;color:#ddd;}
 
 /* CONTACT */
 .contact-box{
@@ -118,7 +129,7 @@ h2{color:gold;text-align:center;margin-bottom:25px;}
 }
 .contact-buttons a{
     text-decoration:none;
-    padding:14px 22px;
+    padding:15px 25px;
     border-radius:8px;
     font-weight:bold;
     color:#fff;
@@ -135,7 +146,6 @@ footer{
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -146,7 +156,6 @@ footer{
 <div class="container">
 
 <h2>Featured Products</h2>
-
 <div class="slider">
     <div class="slides">
         <img src="https://raw.githubusercontent.com/allroundadvert/CJ-Global-/main/IMG-20260207-WA0051(1).jpg">
@@ -166,56 +175,25 @@ footer{
 </div>
 
 <h2>Select Products</h2>
-
 <div class="products">
-    <div class="product" onclick="toggle(this,'Plastic Tap')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Plastic Tap</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Plumbing Materials')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Plumbing Materials</div>
-    </div>
-    <div class="product" onclick="toggle(this,'W.C Set')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">W.C Set</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Mixers')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Mixers</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Sink')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Sink</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Bath')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Bath</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Iron Rods')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Iron Rods</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Showers')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Showers</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Jacuzzi')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Jacuzzi</div>
-    </div>
-    <div class="product" onclick="toggle(this,'PVC Ceiling')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">PVC Ceiling</div>
-    </div>
-    <div class="product" onclick="toggle(this,'GP Tanks')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">GP Tanks</div>
-    </div>
-    <div class="product" onclick="toggle(this,'Doors')">
-        <span class="check">✓ Selected</span>
-        <div class="product-title">Doors</div>
-    </div>
+    <div class="product" onclick="toggle(this,'Plastic Tap')"><span class="check">✓</span><div class="product-title">Plastic Tap</div></div>
+    <div class="product" onclick="toggle(this,'Plumbing Materials')"><span class="check">✓</span><div class="product-title">Plumbing Materials</div></div>
+    <div class="product" onclick="toggle(this,'W.C Set')"><span class="check">✓</span><div class="product-title">W.C Set</div></div>
+    <div class="product" onclick="toggle(this,'Mixers')"><span class="check">✓</span><div class="product-title">Mixers</div></div>
+    <div class="product" onclick="toggle(this,'Sink')"><span class="check">✓</span><div class="product-title">Sink</div></div>
+    <div class="product" onclick="toggle(this,'Bath')"><span class="check">✓</span><div class="product-title">Bath</div></div>
+    <div class="product" onclick="toggle(this,'Iron Rods')"><span class="check">✓</span><div class="product-title">Iron Rods</div></div>
+    <div class="product" onclick="toggle(this,'Showers')"><span class="check">✓</span><div class="product-title">Showers</div></div>
+    <div class="product" onclick="toggle(this,'Jacuzzi')"><span class="check">✓</span><div class="product-title">Jacuzzi</div></div>
+    <div class="product" onclick="toggle(this,'PVC Ceiling')"><span class="check">✓</span><div class="product-title">PVC Ceiling</div></div>
+    <div class="product" onclick="toggle(this,'GP Tanks')"><span class="check">✓</span><div class="product-title">GP Tanks</div></div>
+    <div class="product" onclick="toggle(this,'Doors')"><span class="check">✓</span><div class="product-title">Doors</div></div>
+</div>
+
+<!-- SPECIFICATIONS -->
+<div class="spec-box">
+    <label for="specs">Specifications / Instructions</label>
+    <textarea id="specs" placeholder="Enter sizes, quantity, colors, or special instructions..."></textarea>
 </div>
 
 <div class="selected-box">
@@ -230,8 +208,9 @@ footer{
         Okpanam Road, Okpanam, Asaba,<br>
         Delta State, Nigeria
     </div>
+
     <div class="contact-buttons">
-        <a class="whatsapp" href="https://wa.me/2348033802947">WhatsApp: 08033802947</a>
+        <a id="whatsappLink" class="whatsapp" target="_blank">WhatsApp: 08033802947</a>
         <a class="email" href="mailto:godsonbrightlink72@gmail.com">Email Us</a>
     </div>
 </div>
@@ -244,6 +223,8 @@ footer{
 
 <script>
 let selected=[];
+const specs=document.getElementById("specs");
+
 function toggle(el,item){
     el.classList.toggle('selected');
     if(selected.includes(item)){
@@ -253,7 +234,19 @@ function toggle(el,item){
     }
     document.getElementById('selectedList').innerText=
         selected.length?selected.join(', '):'No products selected.';
+    updateWhatsApp();
 }
+
+specs.addEventListener("input",updateWhatsApp);
+
+function updateWhatsApp(){
+    let base="Hello, I saw your products on your website and I am interested. Please kindly give me more information. 🙏";
+    let products=selected.length? "%0A%0ASelected Products:%0A- "+selected.join("%0A- "):"";
+    let specText=specs.value.trim() ? "%0A%0ASpecifications:%0A" + encodeURIComponent(specs.value) : "";
+    document.getElementById("whatsappLink").href=
+        "https://wa.me/2348033802947?text="+encodeURIComponent(base)+products+specText;
+}
+updateWhatsApp();
 </script>
 
 </body>
