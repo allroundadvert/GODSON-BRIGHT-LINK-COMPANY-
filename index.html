@@ -12,6 +12,8 @@ body{
     background:#0e0e0e;
     color:#fff;
 }
+
+/* HEADER */
 header{
     background:linear-gradient(135deg,#000,#3a2f00);
     padding:50px 20px;
@@ -20,106 +22,82 @@ header{
 header h1{color:gold;font-size:36px;margin:0;}
 header p{color:#ddd;font-size:17px;max-width:900px;margin:15px auto;}
 
+/* CONTAINER */
 .container{max-width:1200px;margin:40px auto;padding:20px;}
 h2{color:gold;text-align:center;margin-bottom:25px;}
 
 /* SLIDER */
-.slider{
-    position:relative;
-    overflow:hidden;
-    border-radius:15px;
-    margin-bottom:40px;
-}
-.slides{
-    display:flex;
-    width:200%;
-    animation:slide 10s infinite;
-}
-.slides img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-}
+.slider{overflow:hidden;border-radius:15px;margin-bottom:35px;}
+.slides{display:flex;width:200%;animation:slide 10s infinite;}
+.slides img{width:100%;height:330px;object-fit:cover;}
 @keyframes slide{
-    0%{transform:translateX(0);}
-    45%{transform:translateX(0);}
-    55%{transform:translateX(-50%);}
-    100%{transform:translateX(-50%);}
+    0%,45%{transform:translateX(0);}
+    55%,100%{transform:translateX(-50%);}
 }
 
 /* GALLERY */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:14px;
     margin-bottom:40px;
 }
 .gallery img{
     width:100%;
-    height:200px;
+    height:180px;
     object-fit:cover;
     border-radius:10px;
     border:2px solid #333;
 }
 
-/* MATERIAL GRID */
-.materials{
+/* UNIQUE PRODUCT SELECTION */
+.products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
 }
-.material{
-    background:#1b1b1b;
-    border:2px solid #333;
+.product{
+    background:#151515;
+    border:1.5px solid #333;
     border-radius:10px;
-    padding:20px;
-    text-align:center;
+    padding:14px 12px;
     cursor:pointer;
-    transition:.3s;
+    transition:.25s;
+    position:relative;
+    min-height:75px;
 }
-.material:hover{border-color:gold;transform:translateY(-5px);}
-.material.selected{background:#2a2200;border-color:gold;}
-
-/* SELECTED */
-.selected-box{
-    margin:40px 0;
-    padding:20px;
-    background:#141414;
-    border:2px solid gold;
-    border-radius:10px;
+.product:hover{border-color:gold;}
+.product.selected{
+    background:#2a2200;
+    border-color:gold;
 }
-.selected-box h3{color:gold;margin-top:0;}
-
-/* FORM */
-form{
-    background:#1a1a1a;
-    padding:30px;
-    border-radius:12px;
+.product-title{
+    font-weight:600;
+    font-size:15px;
 }
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-label{font-weight:bold;margin-bottom:6px;display:block;}
-input,select,textarea{
-    width:100%;
-    padding:12px;
-    border-radius:6px;
-    border:none;
-}
-textarea{min-height:120px;}
-.full{grid-column:1/3;}
-button{
+.check{
+    position:absolute;
+    top:8px;
+    right:10px;
     background:gold;
     color:#000;
-    padding:15px;
-    border:none;
-    font-size:16px;
-    font-weight:bold;
+    font-size:12px;
+    padding:3px 7px;
     border-radius:6px;
-    cursor:pointer;
+    display:none;
 }
+.product.selected .check{display:block;}
+
+/* SELECTED DISPLAY */
+.selected-box{
+    margin:30px 0;
+    padding:18px;
+    background:#111;
+    border-left:5px solid gold;
+    border-radius:8px;
+}
+.selected-box h3{color:gold;margin-top:0;font-size:18px;}
+#selectedList{color:#ddd;font-size:14px;}
 
 /* CONTACT */
 .contact-box{
@@ -140,7 +118,7 @@ button{
 }
 .contact-buttons a{
     text-decoration:none;
-    padding:15px 25px;
+    padding:14px 22px;
     border-radius:8px;
     font-weight:bold;
     color:#fff;
@@ -154,11 +132,6 @@ footer{
     text-align:center;
     color:#aaa;
     margin-top:40px;
-}
-
-@media(max-width:700px){
-    .form-grid{grid-template-columns:1fr;}
-    .full{grid-column:1/2;}
 }
 </style>
 </head>
@@ -174,7 +147,6 @@ footer{
 
 <h2>Featured Products</h2>
 
-<!-- MOVING IMAGES -->
 <div class="slider">
     <div class="slides">
         <img src="https://raw.githubusercontent.com/allroundadvert/CJ-Global-/main/IMG-20260207-WA0051(1).jpg">
@@ -182,7 +154,6 @@ footer{
     </div>
 </div>
 
-<!-- IMAGE GALLERY -->
 <div class="gallery">
     <img src="https://raw.githubusercontent.com/allroundadvert/CJ-Global-/main/IMG-20260207-WA0039.jpg">
     <img src="https://raw.githubusercontent.com/allroundadvert/CJ-Global-/main/IMG-20260207-WA0041.jpg">
@@ -194,26 +165,62 @@ footer{
     <img src="https://raw.githubusercontent.com/allroundadvert/CJ-Global-/main/IMG-20260207-WA0053.jpg">
 </div>
 
-<h2>Select Required Materials</h2>
+<h2>Select Products</h2>
 
-<div class="materials">
-    <div class="material" onclick="toggle(this,'Plastic Tap')">Plastic Tap</div>
-    <div class="material" onclick="toggle(this,'Plumbing Materials')">Plumbing Materials</div>
-    <div class="material" onclick="toggle(this,'W.C Set')">W.C Set</div>
-    <div class="material" onclick="toggle(this,'Mixers')">Mixers</div>
-    <div class="material" onclick="toggle(this,'Sink')">Sink</div>
-    <div class="material" onclick="toggle(this,'Bath')">Bath</div>
-    <div class="material" onclick="toggle(this,'Iron Rods')">Iron Rods</div>
-    <div class="material" onclick="toggle(this,'Showers')">Showers</div>
-    <div class="material" onclick="toggle(this,'Jacuzzi')">Jacuzzi</div>
-    <div class="material" onclick="toggle(this,'PVC Ceiling')">PVC Ceiling</div>
-    <div class="material" onclick="toggle(this,'GP Tanks')">GP Tanks</div>
-    <div class="material" onclick="toggle(this,'Doors')">Doors</div>
+<div class="products">
+    <div class="product" onclick="toggle(this,'Plastic Tap')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Plastic Tap</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Plumbing Materials')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Plumbing Materials</div>
+    </div>
+    <div class="product" onclick="toggle(this,'W.C Set')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">W.C Set</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Mixers')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Mixers</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Sink')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Sink</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Bath')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Bath</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Iron Rods')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Iron Rods</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Showers')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Showers</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Jacuzzi')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Jacuzzi</div>
+    </div>
+    <div class="product" onclick="toggle(this,'PVC Ceiling')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">PVC Ceiling</div>
+    </div>
+    <div class="product" onclick="toggle(this,'GP Tanks')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">GP Tanks</div>
+    </div>
+    <div class="product" onclick="toggle(this,'Doors')">
+        <span class="check">✓ Selected</span>
+        <div class="product-title">Doors</div>
+    </div>
 </div>
 
 <div class="selected-box">
-    <h3>Selected Materials</h3>
-    <div id="selectedList">No materials selected.</div>
+    <h3>Selected Products</h3>
+    <div id="selectedList">No products selected.</div>
 </div>
 
 <div class="contact-box">
@@ -223,7 +230,6 @@ footer{
         Okpanam Road, Okpanam, Asaba,<br>
         Delta State, Nigeria
     </div>
-
     <div class="contact-buttons">
         <a class="whatsapp" href="https://wa.me/2348033802947">WhatsApp: 08033802947</a>
         <a class="email" href="mailto:godsonbrightlink72@gmail.com">Email Us</a>
@@ -234,4 +240,21 @@ footer{
 
 <footer>
     © 2026 GODSON BRIGHT LINK COMPANY | Quality You Can Trust
-</
+</footer>
+
+<script>
+let selected=[];
+function toggle(el,item){
+    el.classList.toggle('selected');
+    if(selected.includes(item)){
+        selected=selected.filter(i=>i!==item);
+    }else{
+        selected.push(item);
+    }
+    document.getElementById('selectedList').innerText=
+        selected.length?selected.join(', '):'No products selected.';
+}
+</script>
+
+</body>
+</html>
