@@ -3,114 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GODSON BRIGHT LINK COMPANY | Quality Building Materials</title>
+<title>GODSON BRIGHT LINK COMPANY | Premium Building Materials</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
-    color: #222;
+body{
+    margin:0;
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#0e0e0e;
+    color:#ffffff;
+}
+header{
+    background:linear-gradient(135deg,#000,#3a2f00);
+    padding:50px 20px;
+    text-align:center;
+}
+header h1{
+    color:gold;
+    font-size:36px;
+    margin:0;
+}
+header p{
+    color:#ddd;
+    font-size:17px;
+    max-width:900px;
+    margin:15px auto;
+}
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+h2{
+    color:gold;
+    text-align:center;
+    margin-bottom:25px;
 }
 
-header {
-    background: linear-gradient(135deg, #1c1c1c, #3a2f00);
-    color: gold;
-    padding: 40px 20px;
-    text-align: center;
+/* MATERIAL GRID */
+.materials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+.material{
+    background:#1b1b1b;
+    border:2px solid #333;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+.material:hover{
+    border-color:gold;
+    transform:translateY(-5px);
+}
+.material.selected{
+    background:#2a2200;
+    border-color:gold;
+}
+.material span{
+    font-weight:bold;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
-    letter-spacing: 1px;
+/* SELECTED DISPLAY */
+.selected-box{
+    margin:40px 0;
+    padding:20px;
+    background:#141414;
+    border:2px solid gold;
+    border-radius:10px;
+}
+.selected-box h3{
+    color:gold;
+    margin-top:0;
 }
 
-header p {
-    color: #eee;
-    font-size: 16px;
-    max-width: 700px;
-    margin: 10px auto 0;
+/* FORM */
+form{
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+label{
+    font-weight:bold;
+    margin-bottom:6px;
+    display:block;
+}
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    border-radius:6px;
+    border:none;
+    font-size:15px;
+}
+textarea{
+    min-height:120px;
+}
+.full{
+    grid-column:1/3;
+}
+button{
+    background:gold;
+    color:#000;
+    padding:15px;
+    border:none;
+    font-size:16px;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover{
+    background:#ffcc00;
 }
 
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+/* CONTACT */
+.contact-box{
+    background:#111;
+    padding:30px;
+    border-radius:12px;
+    border:2px solid #3a2f00;
+    margin-top:40px;
+}
+.contact-box h2{
+    color:gold;
+    text-align:center;
+}
+.contact-info{
+    text-align:center;
+    color:#ddd;
+    line-height:1.7;
+}
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+.contact-buttons a{
+    text-decoration:none;
+    padding:15px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    color:#fff;
+}
+.whatsapp{background:#25D366;}
+.email{background:#d44638;}
+
+footer{
+    background:#000;
+    padding:20px;
+    text-align:center;
+    color:#aaa;
+    margin-top:40px;
 }
 
-h2 {
-    text-align: center;
-    color: #3a2f00;
-    margin-bottom: 25px;
-}
-
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-}
-
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-}
-
-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.full {
-    grid-column: 1 / 3;
-}
-
-button {
-    background: #3a2f00;
-    color: gold;
-    border: none;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: gold;
-    color: #1c1c1c;
-}
-
-footer {
-    background: #1c1c1c;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 14px;
-}
-
-@media (max-width: 700px) {
-    form {
-        grid-template-columns: 1fr;
-    }
-    .full {
-        grid-column: 1 / 2;
-    }
+@media(max-width:700px){
+    .form-grid{grid-template-columns:1fr;}
+    .full{grid-column:1/2;}
 }
 </style>
 </head>
@@ -119,72 +176,106 @@ footer {
 
 <header>
     <h1>GODSON BRIGHT LINK COMPANY</h1>
-    <p>Your trusted supplier of high-quality plumbing and building materials. Strength, durability, and excellence you can rely on.</p>
+    <p>Premium supplier of high-quality plumbing and building materials. Strength, durability and excellence for every project.</p>
 </header>
 
 <div class="container">
-    <h2>Customer Purchase Form</h2>
 
-    <form>
+<h2>Select Required Materials</h2>
+
+<div class="materials">
+    <div class="material" onclick="toggle(this,'Plastic Tap')"><span>Plastic Tap</span></div>
+    <div class="material" onclick="toggle(this,'Plumbing Materials')"><span>Plumbing Materials</span></div>
+    <div class="material" onclick="toggle(this,'W.C Set')"><span>W.C Set</span></div>
+    <div class="material" onclick="toggle(this,'Mixers')"><span>Mixers</span></div>
+    <div class="material" onclick="toggle(this,'Sink')"><span>Sink</span></div>
+    <div class="material" onclick="toggle(this,'Bath')"><span>Bath</span></div>
+    <div class="material" onclick="toggle(this,'Iron Rods')"><span>Iron Rods</span></div>
+    <div class="material" onclick="toggle(this,'Showers')"><span>Showers</span></div>
+    <div class="material" onclick="toggle(this,'Jacuzzi')"><span>Jacuzzi</span></div>
+    <div class="material" onclick="toggle(this,'Nails & Keys')"><span>Nails & Keys</span></div>
+    <div class="material" onclick="toggle(this,'PVC Ceiling')"><span>PVC Ceiling</span></div>
+    <div class="material" onclick="toggle(this,'GP Tanks')"><span>GP Tanks</span></div>
+    <div class="material" onclick="toggle(this,'Doors')"><span>Doors</span></div>
+</div>
+
+<div class="selected-box">
+    <h3>Selected Materials</h3>
+    <div id="selectedList">No materials selected.</div>
+</div>
+
+<form>
+    <div class="form-grid">
         <div>
-            <label>Customer Full Name</label>
-            <input type="text" placeholder="Enter your full name" required>
+            <label>Customer Name</label>
+            <input type="text" required>
         </div>
-
         <div>
             <label>Phone Number</label>
-            <input type="tel" placeholder="Enter phone number" required>
+            <input type="tel" required>
         </div>
-
         <div>
-            <label>Preferred Delivery Time</label>
+            <label>Preferred Time</label>
             <input type="time">
         </div>
-
         <div>
-            <label>Doors Selection</label>
+            <label>Door Type</label>
             <select>
-                <option>Select door type</option>
+                <option>Select</option>
                 <option>Wooden Door</option>
                 <option>Security Door</option>
-                <option>Glass Door</option>
                 <option>Steel Door</option>
+                <option>Glass Door</option>
             </select>
         </div>
-
         <div class="full">
-            <label>Select Plumbing & Building Materials</label>
-            <select multiple size="8">
-                <option>Plastic Tap</option>
-                <option>Plumbing Materials</option>
-                <option>W.C Set</option>
-                <option>Mixers</option>
-                <option>Sink</option>
-                <option>Bath</option>
-                <option>Iron Rods</option>
-                <option>Showers</option>
-                <option>Jacuzzi</option>
-                <option>Nails & Keys</option>
-                <option>PVC Ceiling</option>
-                <option>GP Tanks</option>
-                <option>Doors</option>
-            </select>
+            <label>Specifications / Instructions</label>
+            <textarea placeholder="Sizes, colors, quantity, special instructions..."></textarea>
         </div>
-
-        <div class="full">
-            <label>Specifications / Special Instructions</label>
-            <textarea placeholder="Enter sizes, colors, quantities, or any special request..."></textarea>
-        </div>
-
         <div class="full">
             <button type="submit">Submit Purchase Request</button>
         </div>
-    </form>
+    </div>
+</form>
+
+<div class="contact-box">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <strong>Address:</strong><br>
+        Lind D/E Shop 2/3/4, Anuson Building Materials Market,<br>
+        Okpanam Road, Okpanam, Asaba,<br>
+        Delta State, Nigeria
+    </div>
+
+    <div class="contact-buttons">
+        <a class="whatsapp" href="https://wa.me/2348033802947" target="_blank">
+            WhatsApp: 08033802947
+        </a>
+        <a class="email" href="mailto:godsonbrightlink72@gmail.com">
+            Email Us
+        </a>
+    </div>
+</div>
+
 </div>
 
 <footer>
-    © 2026 GODSON BRIGHT LINK COMPANY • High Quality Building & Plumbing Materials
+    © 2026 GODSON BRIGHT LINK COMPANY | Quality You Can Trust
 </footer>
+
+<script>
+let selected=[];
+function toggle(el,item){
+    el.classList.toggle('selected');
+    if(selected.includes(item)){
+        selected = selected.filter(i => i !== item);
+    }else{
+        selected.push(item);
+    }
+    document.getElementById('selectedList').innerText =
+        selected.length ? selected.join(', ') : 'No materials selected.';
+}
+</script>
 
 </body>
 </html>
